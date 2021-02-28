@@ -1,14 +1,6 @@
-import { applyMiddleware, createStore } from 'redux';
-import RootReducer from './Reducers/RootReducer'
-import { composeWithDevTools } from 'redux-devtools-extension';
-import thunk from 'redux-thunk';
+import { createStore } from 'redux';
+import RootReducer from './Reducer';
 
-const Store = createStore(
-  RootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-  // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
-
-export type RootStore = ReturnType<typeof RootReducer>
+const Store = createStore(RootReducer);
 
 export default Store;
